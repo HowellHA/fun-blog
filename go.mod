@@ -2,7 +2,11 @@ module github.com/HowellHA/fun-blog
 
 go 1.21.3
 
-require github.com/gin-gonic/gin v1.9.1
+require (
+	github.com/gin-gonic/gin v1.9.1
+	github.com/go-sql-driver/mysql v1.6.0
+	github.com/jmoiron/sqlx v1.3.5
+)
 
 require (
 	github.com/bytedance/sonic v1.9.1 // indirect
