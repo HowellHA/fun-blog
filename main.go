@@ -6,8 +6,8 @@ import (
 )
 
 func main() {
-	db := service.MySQLInit()
-	db.Ping()
+	service.MySQL.Init()
+	defer service.MySQL.Close()
 	e := router.Init()
 	e.Run(":8080")
 }
