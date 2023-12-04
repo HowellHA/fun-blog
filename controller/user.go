@@ -19,7 +19,7 @@ func (userCtrl) Login(ctx *gin.Context) {
 	param := UserLoginParam{}
 	err := ctx.ShouldBind(&param)
 	if err != nil {
-		ctx.Error(err)
+		_ = ctx.Error(err)
 		ctx.Abort()
 		return
 	}
