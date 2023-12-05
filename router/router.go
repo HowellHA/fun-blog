@@ -1,6 +1,9 @@
 package router
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/HowellHA/fun-blog/middleware"
+	"github.com/gin-gonic/gin"
+)
 
 type iRoute interface {
 	Register(*gin.Engine)
@@ -15,6 +18,7 @@ func Init() *gin.Engine {
 	engine.Use(
 		gin.Logger(),
 		gin.Recovery(),
+		middleware.GlobalErrorHandle,
 	)
 
 	for _, r := range iRoutes {
