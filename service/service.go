@@ -1,3 +1,4 @@
 package service
 
-var MySQL = mysql{}
+type iService interface {
+}
